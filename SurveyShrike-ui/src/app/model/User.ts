@@ -4,5 +4,6 @@ export class User{
     name:string;
     password:string;
     emailId:string;
+    admin:boolean;
 
 }

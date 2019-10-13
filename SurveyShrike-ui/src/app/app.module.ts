@@ -8,13 +8,18 @@ import { RegistrationPageComponent } from './component/registration-page/registr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/UserService.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ServeyListPageComponent } from './component/servey-list-page/servey-list-page.component';
+import { AppDataProvider } from './global/AppDataProvider';
+import { AdminPageComponent } from './component/admin-page/admin-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    ServeyListPageComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService,AppDataProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

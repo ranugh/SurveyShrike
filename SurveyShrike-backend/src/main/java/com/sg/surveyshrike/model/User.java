@@ -10,12 +10,15 @@ import lombok.Data;
 @Data
 public class User {
 	
-	@Id
+	
 	@GeneratedValue
 	private long id;
 
 	private String name;
 	private String password;
+	
+	@Id
 	private String emailId;
+	private boolean admin = false;
 	
 }

@@ -3,6 +3,7 @@ import { isDevMode } from '@angular/core';
 export class RestEndPoints {
 
     public static USERS = '/users';
+    public static AUTHENTICATE = '/authenticate';
 
     public static getBaseURL() {
         return this.getContext();

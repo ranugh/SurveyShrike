@@ -21,6 +21,7 @@ export class RegistrationPageComponent implements OnInit {
   }
 
   registration(){
+    console.log(this.user);
     if(this.user.name && this.user.emailId && this.user.password){
         this.userService.registerUser(this.user).subscribe(response => {
             this.router.navigate(['./login-page']);
@@ -31,6 +32,10 @@ export class RegistrationPageComponent implements OnInit {
       window.alert('wrong input');
     }
 
+  }
+
+  onChange(event){
+    console.log(event);
   }
 
 }
