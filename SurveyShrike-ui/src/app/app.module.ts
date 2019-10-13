@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServeyListPageComponent } from './component/servey-list-page/servey-list-page.component';
 import { AppDataProvider } from './global/AppDataProvider';
 import { AdminPageComponent } from './component/admin-page/admin-page.component';
+import { CreateSurveyPageComponent } from './component/create-survey-page/create-survey-page.component';
+import { ViewUserSurveyComponent } from './component/view-user-survey/view-user-survey.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { AdminPageComponent } from './component/admin-page/admin-page.component'
     LoginPageComponent,
     RegistrationPageComponent,
     ServeyListPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    CreateSurveyPageComponent,
+    ViewUserSurveyComponent
   ],
   imports: [
     BrowserModule,

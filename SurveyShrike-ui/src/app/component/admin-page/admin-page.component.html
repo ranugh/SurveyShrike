@@ -1,1 +1,17 @@
-<p>admin-page works!</p>
+<div class="container">
+        <ul class="nav nav-pills">
+            <li [ngClass]="{ 'active' : !createSurvayFlag }"><a href="/admin-page">Home</a></li>
+            <li [ngClass]="{ 'active' : createSurvayFlag }"><a (click)="createSurvay();">Create Survey</a></li>
+         
+          
+        </ul>
+</div>
+<div class="container">
+    <div *ngIf="createSurvayFlag">
+        <app-create-survey-page></app-create-survey-page>
+    </div>
+    <div *ngIf="!createSurvayFlag">
+            <app-view-user-survey></app-view-user-survey>
+    </div>
+</div>
+

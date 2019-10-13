@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 
+  public createSurvayFlag = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  createSurvay(){
+    this.createSurvayFlag = true;
   }
 
 }
