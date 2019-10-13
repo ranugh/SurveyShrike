@@ -1,11 +1,33 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginPageComponent } from './component/login-page/login-page.component';
+import { RegistrationPageComponent } from './component/registration-page/registration-page.component';
 
 
-const routes: Routes = [];
+export const router: Routes = [
+  {
+    path: '',
+    redirectTo: 'login-page',
+    pathMatch: 'full',
+    data: {
+      displayInMenu: false
+    }
+  },
+  {
+    path: 'login-page',
+    component: LoginPageComponent,
+    data: {
+      displayInMenu: false
+    }
+  },
+  {
+    path: 'registration-page',
+    component: RegistrationPageComponent,
+    data: {
+      displayInMenu: false
+    }
+  }];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+  export const routes: ModuleWithProviders = RouterModule.forRoot(router, {
+    enableTracing: true
+  });
