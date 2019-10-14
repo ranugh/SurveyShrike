@@ -5,5 +5,7 @@ export class AppDataProvider{
     token:string;
     user:User;
     userServey:SurveyModel;
+    userServeyList:SurveyModel[];
+    
 
 }

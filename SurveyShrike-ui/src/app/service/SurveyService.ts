@@ -28,4 +28,11 @@ export class SurveyService extends CommonDataService{
       return super.getEntityWithPayloadAsArg(url, userResponse);
     }
 
+    getUserSurveyResponses(){
+      const url: string =
+        RestEndPoints.getBaseURL() +
+        RestEndPoints.USER_RESPONSE ;
+      return super.getEntity(url);
+    }
+
 }

@@ -5,6 +5,7 @@ import { RegistrationPageComponent } from './component/registration-page/registr
 import { ServeyListPageComponent } from './component/servey-list-page/servey-list-page.component';
 import { AdminPageComponent } from './component/admin-page/admin-page.component';
 import { UserSurveyPageComponent } from './component/user-survey-page/user-survey-page.component';
+import { UserSurveyListComponent } from './component/user-survey-list/user-survey-list.component';
 
 
 export const router: Routes = [
@@ -47,6 +48,13 @@ export const router: Routes = [
   {
     path: 'app-user-survey-page',
     component: UserSurveyPageComponent,
+    data: {
+      displayInMenu: false
+    }
+  },
+  {
+    path: 'app-user-survey-list',
+    component: UserSurveyListComponent,
     data: {
       displayInMenu: false
     }

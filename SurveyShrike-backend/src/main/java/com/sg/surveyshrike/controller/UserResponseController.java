@@ -1,6 +1,8 @@
 package com.sg.surveyshrike.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +28,10 @@ public class UserResponseController {
 	
 	
 	@GetMapping
-	public List<UserResponse> getUserResponse() {
-		return userResponseService.getUserResponse();
+	public Map<String,List<UserResponse>> getUserResponse() {
+		Map<String,List<UserResponse>> userResponseList = new HashMap<>();
+		userResponseList.put("USER_RESPONSE_LIST",userResponseService.getUserResponse());
+		return userResponseList;
 	}
 
 }
