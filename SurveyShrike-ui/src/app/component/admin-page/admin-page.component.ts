@@ -17,4 +17,9 @@ export class AdminPageComponent implements OnInit {
     this.createSurvayFlag = true;
   }
 
+  createSurvaySuccess(event){
+    console.log("Create Survey Successful in admin");
+    this.createSurvayFlag = false;
+  }
+
 }

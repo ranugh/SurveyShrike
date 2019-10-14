@@ -7,12 +7,16 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { RegistrationPageComponent } from './component/registration-page/registration-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/UserService.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServeyListPageComponent } from './component/servey-list-page/servey-list-page.component';
 import { AppDataProvider } from './global/AppDataProvider';
 import { AdminPageComponent } from './component/admin-page/admin-page.component';
 import { CreateSurveyPageComponent } from './component/create-survey-page/create-survey-page.component';
 import { ViewUserSurveyComponent } from './component/view-user-survey/view-user-survey.component';
+import { SurveyModel } from './model/SurveyModel';
+import { SurveyService } from './service/SurveyService';
+import { JwtInterceptor } from './interceptor/Jwtinterceptor';
+import { CacheStore } from './global/CacheStore';
 
 
 @NgModule({
@@ -31,7 +35,8 @@ import { ViewUserSurveyComponent } from './component/view-user-survey/view-user-
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService,AppDataProvider],
+  providers: [UserService,AppDataProvider,SurveyService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },CacheStore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

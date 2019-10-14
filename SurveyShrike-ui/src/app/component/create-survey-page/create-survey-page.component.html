@@ -1,20 +1,73 @@
 
-<div>
+<div class="well" style="margin-top: 20px;">
     <!-- <form class="form-horizontal"> -->
-        <div class="form-group">
+        <div class="form-group" style ="margin-bottom: 40px;">
             <label class="control-label col-sm-2" for="survayName">Survay Name:</label>
             <div class="col-sm-10">
             <input type="text" class="form-control" id="survayName" 
                 placeholder="Survay Name" name="survayName" [(ngModel)]="survey.surveyName">
             </div>
         </div>
-        <div class="form-group" style="padding-top: 50px;">
-            <label class="control-label col-sm-2" for="question">Question</label>
-            <div class="col-sm-10">          
-            <input type="text" class="form-control" id="question" 
-                    placeholder="Enter Question" name="question" [(ngModel)]="question.questionName">
+</div>        
+
+<div class="well well-sm">
+            <div class="form-group" style="padding-top: 50px;">
+                <label class="control-label col-sm-2" for="question">Question:</label>
+                <div class="col-sm-10">          
+                <input type="text" class="form-control" id="question" 
+                        placeholder="Enter Question" name="question" [(ngModel)]="question.questionName">
+                </div>
             </div>
-        </div>
+
+            <div class="form-group" style="padding-top: 50px;">
+                    <label class="control-label col-sm-2" for="answerType">Answer Type:</label>
+                    <div class="col-sm-10"> 
+                    <select class="form-control" name="answerType" [(ngModel)]="question.answerType" >
+                        <option [value]="AnswerType.TEXTBOX">Text Box</option>
+                        <option [value]="AnswerType.RADIO">Radio Button</option>
+                        <option [value]="AnswerType.CHECKBOX">Check Box</option>
+                    </select>         
+                
+                    </div>
+            </div>        
+
+            <div class="form-group" style="padding-top: 50px;">
+
+                <span *ngIf="question.answerType == AnswerType.RADIO">
+                        <form class="form-inline">
+                            <div class="form-group">
+                              <label for="ans1">Answer 1:</label>
+                              <input type="text" class="form-control" style="margin-left: 20px;" id="ans1" name="ans1" [(ngModel)] = "answers[0]">
+                            </div>
+                            <div class="form-group" style="margin-left: 20px;">
+                              <label for="ans2">Answer 2:</label>
+                              <input type="text" class="form-control" style="margin-left: 20px;" id="ans2" name="ans2" [(ngModel)] = "answers[1]">
+                            </div>
+                            
+                        </form>  
+                </span>
+
+                <span *ngIf="question.answerType == AnswerType.CHECKBOX" class="form-inline">
+                        <div class="form-group" *ngFor="let ans of answers; let i = index" style="margin-right:20px">
+                                <label for="email">Answer {{i+1}}:</label>
+                                <input type="text" class="form-control" style="margin-left: 20px;" id="ans1" name="ans1" [(ngModel)] = "ans">
+                        </div>
+                        <div class="form-group">
+                                <label for="email">Answer {{answers.length + 1}}:</label>
+                                <input type="text" class="form-control" style="margin-left: 20px;" id="ans1" name="ans1" [(ngModel)] = "checkBoxAnswer">
+                        </div>
+
+                        <button type="submit" class="btn btn-default float-right" (click)="addCheckBoxAnswer()">Add Answer</button>
+                </span>
+
+                
+            </div>
+
+
+            <button type="submit" class="btn btn-default float-right" style="position: right" (click)="addQuestion()">Add</button>
+</div>
+
+<button type="submit" class="btn btn-default float-right" (click)="submitSurvey()">Submit</button>
+
         
     <!-- </form> -->
-</div>

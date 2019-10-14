@@ -8,7 +8,7 @@
 </div>
 <div class="container">
     <div *ngIf="createSurvayFlag">
-        <app-create-survey-page></app-create-survey-page>
+        <app-create-survey-page (eventEmitter)="createSurvaySuccess($event)"></app-create-survey-page>
     </div>
     <div *ngIf="!createSurvayFlag">
             <app-view-user-survey></app-view-user-survey>

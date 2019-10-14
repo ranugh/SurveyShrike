@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { JwtRequest } from 'src/app/model/JwtRequest';
 import { UserService } from 'src/app/service/UserService.service';
 import { AppDataProvider } from 'src/app/global/AppDataProvider';
+import { CacheStore } from 'src/app/global/CacheStore';
 
 @Component({
   selector: 'app-login-page',
@@ -14,7 +15,8 @@ export class LoginPageComponent implements OnInit {
   constructor(
     public router:Router,
     public userService : UserService,
-    public data : AppDataProvider
+    public data : AppDataProvider,
+    public cacheStore : CacheStore
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,9 @@ export class LoginPageComponent implements OnInit {
       this.userService.login(this.jwtRequest).subscribe(response => {
         this.data.token = response['jwttoken'];
         this.data.user = response['userDetails'];
+
+        this.cacheStore.storeData(CacheStore.TOKEN,  this.data.token);
+        this.cacheStore.storeData(CacheStore.USER_DETAILS,  this.data.user);
         if(this.data.user.admin){
           this.router.navigate(['./admin-page']);
         }else {

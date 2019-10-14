@@ -1,17 +1,16 @@
 package com.sg.surveyshrike.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
-@Entity
+@Document(collection = "user-info")
 @Data
 public class User {
 	
 	
-	@GeneratedValue
 	private long id;
 
 	private String name;
