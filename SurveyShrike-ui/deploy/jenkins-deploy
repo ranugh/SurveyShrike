@@ -1,0 +1,21 @@
+node {
+   stage('Stopping Running Service') {
+      bat("c:\\Deployment\\frontend\\Kill-frontend.bat")
+   }
+   
+   stage('GetSources') {
+      git (branch: 'master' , url:'https://github.com/ranugh/SurveyShrike.git')        
+   }
+   stage('Installing dependency') {
+      dir('SurveyShrike-ui'){
+            bat("npm install")
+         
+         }
+   }
+    stage('deploy') {      
+      dir('SurveyShrike-ui'){
+            bat("npm start")
+         
+         }
+   }
+}

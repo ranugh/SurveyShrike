@@ -1,0 +1,1 @@
+java -jar  c:\\Deployment\\backend\\SurveyShrike-backend.jar>> c:\\Deployment\\backend\\SurveyShrike_Backend.log
