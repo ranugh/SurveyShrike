@@ -5,7 +5,7 @@
 ## Architecture
 Below is the application Architecture diagram.
 
-![](/docs/images/Architecture.png)
+![](Architecture.PNG)
 
 
 	Where We have two major components:
@@ -61,16 +61,28 @@ __Instance might be in stop mode. And the same can be made  up with single click
 		3) Fill a specific Survey information.
 
 
-## Deployment Into AWS
+## DataBase : MongoDB in AWS EC2
+
+Have configured MongoDB into a configured  AWS EC2 Instance.
+	 
+	 > DB Name:ServeyShrike
+	 	Host : ServeyShrike
+		Operation System: Windows 
+		Final AWS AMI Image on Asia Pacific Mumbai) Region: SurveyShrike_RanuGhosh
+		Elastic Ip : 15.206.15.243
+
+
+## Deployment Into AWS EC2
 
 Survey Shrike is configured to be deployed on AWS EC2 Instance.
 We have created an EC2 instance with following properties:
 	 
 	 > CPU: 1
 		Memory: 1GB
-		EBS: 60GB
+		EBS: 30GB
 		Type: t2.micro
-		Operation System: Windows Final AWS AMI Image on Asia Pacific Mumbai) Region: SurveyShrike_RanuGhosh
+		Operation System: Windows 
+		Final AWS AMI Image on Asia Pacific Mumbai) Region: SurveyShrikeMongoDB_Ranu
 		Elastic Ip : 15.206.34.235
 
 
