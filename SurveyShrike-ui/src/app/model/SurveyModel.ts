@@ -1,7 +1,7 @@
 
 export class SurveyModel{
     surveyName:string;
-    id:number;
+    surveyId:number;
     questions:Question[] = [];
 }
 
@@ -10,6 +10,8 @@ export class Question{
     questionName: string;
     answerType:AnswerType;
     answers:Answer[] = [];
+    userResponseAnswer:string;
+    userResponseAnswerId:number;
 
 
 }
@@ -17,6 +19,7 @@ export class Question{
 export class Answer{
     answerId:string;
     answerStr:string;
+    checked:boolean;
 }
 
 export enum AnswerType{

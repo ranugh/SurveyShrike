@@ -1,0 +1,46 @@
+<div class ="container">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h2>{{userSurvey.surveyName}}</h2></div>
+            <div class="panel-body">
+                    <form>
+                            <div class="form-group" *ngFor="let ques of userSurvey.questions; let i = index ">
+                              <label for="question">{{ques.questionName}}</label>
+                              <span *ngIf = "ques.answerType == AnswerType.TEXTBOX">
+                                    <input type="text" class="form-control" id="text-{{i}}"
+                                            name="text-{{i}}" [(ngModel)]="ques.userResponseAnswer">
+
+                              </span>
+
+                              <span *ngIf = "ques.answerType == AnswerType.RADIO">
+
+                                    <div class="form-check" *ngFor="let ans of ques.answers; let i = index ">
+                                            <label class="form-check-label">
+                                              <input type="radio" class="form-check-input" name="radio-{{i}}"
+                                                [value]="ans.answerId" [(ngModel)] ="ques.userResponseAnswerId">{{ans.answerStr}}
+                                            </label>
+                                    </div>
+
+                              </span>
+
+                              <span *ngIf = "ques.answerType == AnswerType.CHECKBOX">
+
+                                    <div class="form-check-inline" *ngFor="let ans of ques.answers; let i = index">
+                                            <label class="form-check-label">
+                                              <input type="checkbox" class="form-check-input" id="idcheckbox{{i}}"
+                                              name="checkbox{{i}}"[value]="ans.answerId" [(ngModel)]="ans.checked">{{ans.answerStr}}
+                                            </label>
+                                    </div>
+
+                              </span>
+                              <!-- <input type="email" class="form-control" id="email" name="email" [(ngModel)]="jwtRequest.username"> -->
+                            </div>
+
+                            <button type="submit" class="btn btn-default" (click)="submitSurvey()">Submit</button>
+
+                          </form>
+
+            </div>
+        </div>
+
+
+    </div>

@@ -17,6 +17,7 @@ public class Survey {
 	
 	@Id
 	private int id;
+	private int surveyId;
 	private String surveyName;
 	private List<Question> questions;
 	

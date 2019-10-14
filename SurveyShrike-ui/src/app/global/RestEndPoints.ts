@@ -5,6 +5,7 @@ export class RestEndPoints {
     public static USERS = '/users';
     public static AUTHENTICATE = '/authenticate';
     public static SURVEYS='/surveys';
+    public static USER_RESPONSE='/userResponse';
 
     public static getBaseURL() {
         return this.getContext();

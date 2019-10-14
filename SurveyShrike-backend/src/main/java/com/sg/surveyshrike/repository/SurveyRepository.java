@@ -6,6 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.sg.surveyshrike.model.Survey;
 
 @RepositoryRestResource(collectionResourceRel = "surveys", path = "surveys")
-public interface SurveyRepository extends MongoRepository<Survey, Long>{
+public interface SurveyRepository extends MongoRepository<Survey, Integer>{
 
 }

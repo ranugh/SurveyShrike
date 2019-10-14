@@ -17,6 +17,7 @@ import { SurveyModel } from './model/SurveyModel';
 import { SurveyService } from './service/SurveyService';
 import { JwtInterceptor } from './interceptor/Jwtinterceptor';
 import { CacheStore } from './global/CacheStore';
+import { UserSurveyPageComponent } from './component/user-survey-page/user-survey-page.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CacheStore } from './global/CacheStore';
     ServeyListPageComponent,
     AdminPageComponent,
     CreateSurveyPageComponent,
-    ViewUserSurveyComponent
+    ViewUserSurveyComponent,
+    UserSurveyPageComponent
   ],
   imports: [
     BrowserModule,

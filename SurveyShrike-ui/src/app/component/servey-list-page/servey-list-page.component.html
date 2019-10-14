@@ -1,1 +1,15 @@
-<p>servey-list-page works!</p>
+<div class ="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Survey List</div>
+        <div class="panel-body">
+                <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let survey of surveyList"
+                               (click)="openSurvey(survey)" >{{survey.surveyName}}</li>
+                        
+                </ul>
+
+        </div>
+    </div>
+        
+
+</div>
