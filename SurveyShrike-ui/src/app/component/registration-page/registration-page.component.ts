@@ -26,6 +26,12 @@ export class RegistrationPageComponent implements OnInit {
         this.userService.registerUser(this.user).subscribe(response => {
             this.router.navigate(['./login-page']);
 
+        },(error) =>{
+
+          if(error['status'] === 409){
+            window.alert("EmailId already in use");
+          }
+          
         })
     } else {
 

@@ -16,8 +16,8 @@ public class JwtUserDetailsService {
 	
 	public User loadUserByEmailId(String emailId) {
 		
-		Optional<User> user =  userRepo.findById(emailId);
-		return user.isPresent()? user.get(): null;
+		User user =  userRepo.findByEmailId(emailId);
+		return  user;
 	}
 
 }

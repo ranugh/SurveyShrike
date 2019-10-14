@@ -21,6 +21,9 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
     this.jwtRequest = new JwtRequest();
+    this.cacheStore.removeItem(CacheStore.TOKEN);
+    this.cacheStore.removeItem(CacheStore.USER_DETAILS);
+
   }
 
   registration(){
