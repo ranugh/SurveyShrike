@@ -71,6 +71,20 @@ Have configured MongoDB into a configured  AWS EC2 Instance.
 		Final AWS AMI Image on Asia Pacific Mumbai) Region: SurveyShrike_RanuGhosh
 		Elastic Ip : 15.206.15.243
 
+## DataBase : MongoDB in Local
+
+Download the MongoDB MSI Installer Package for windows following below link.
+	https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows-unattended/
+	
+1)Creating a database using “use” command
+Creating a database in MongoDB is as simple as issuing the "using" command. The following example shows how this can be done.
+
+command to be executed:
+
+		use surveyshrike
+
+2)The required collection will be created as per the info provided on surveyShrike-backend project once the backend application starts.
+
 
 ## Deployment Into AWS EC2
 

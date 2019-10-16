@@ -3,8 +3,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
 ## Development server
-
-Run `ng serve`\ `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To run the SurveyShrike-ui on local please follow the below steps:
+1. Please modify the provided ip of proxy.cong.json to localhost 
+    eg: modify "target": "http://15.206.34.235:9092" to "target": "http://localhost:9092"
+    
+2. Run  `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
